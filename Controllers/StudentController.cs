@@ -15,7 +15,10 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable <Student> allStudent = _db.Students;
+
+
+            return View(allStudent);
         }
         // GET METHOD
         public IActionResult Create()
@@ -24,7 +27,7 @@ namespace WebApplication2.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        // POST
+        //POST
         public IActionResult Create(Student obj)
         {
             _db.Students.Add(obj);

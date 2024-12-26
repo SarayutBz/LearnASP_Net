@@ -4,7 +4,7 @@
 }
 
 <h1 class="text-center">บันทึกคะแนนสอบ</h1>
-<form>
+<form method="post" asp-controller="Student" asp-action="Create">
     <div class="form-group">
         <label asp-for="Name"></label>
         <input type="text" asp-for="Name" class="form-control">
@@ -14,5 +14,6 @@
         <label asp-for="Score"></label>
         <input type="number" name="Score" class="form-control"/>
     </div>
+    <button type="submit" class="btn btn-primary my-2">บันทึก</button>
 
 </form>
