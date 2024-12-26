@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebApplication2.Models.Student>
+@{
+    ViewData["Title"] = "หน้าแรก";
+}
+
+<h1 class="text-center">คะแนนสอบวิชาคอมพิวเตอร์</h1>
+
+@foreach(var student in Model){
+    <p>รหัสนักเรียน : @student.Id</p>
+    <p>ชื่อ : @student.Name</p>
+    <p>คะแนน : @student.Score</p>
+    @if (student.Score >= 50){
+        <strong class="text-success">สอบผ่าน</strong>
+    }
+    else{
+        <strong class="text-danger">สอบไม่ผ่าน</strong>
+    }
+
+    <hr/>
+}
